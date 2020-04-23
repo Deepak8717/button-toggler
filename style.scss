@@ -1,0 +1,61 @@
+$button-color:#ddd;
+$toggle-color:#fff;
+$button-color-2:lightgreen;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background:#000;
+    .container{
+        max-width: 80%;
+        height: 100vh;
+        margin:auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+        #button{
+            background: $button-color;
+            display: flex;
+            position: relative;
+            width:200px;
+            height:60px;
+            align-items: center;
+            border-radius: 70px 70px;
+            // transition: all 0.9s ease-in-out;
+
+            #checkbox{
+                width:50px;
+                height: 50px;
+                position: absolute;
+                left:5px;
+                opacity: 0;
+                z-index:2;
+                
+                &:checked{
+                    transform: translateX(140px);
+                    & + .toggler {
+                        transform: translateX(140px);
+                        background-color: $button-color-2;
+                        box-shadow: none;
+                }
+            }
+
+        }
+
+        & .toggler{
+            background:$toggle-color;
+            width:60px;
+            height:60px;
+            border-radius:70px;
+            transition: all 2s ease-in-out;
+            box-shadow: 4px 1px 10px  black;
+        }
+        
+    }
+    }
+}
